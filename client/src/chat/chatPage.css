@@ -1,0 +1,15 @@
+
+.app__body{
+  display:flex;
+  flex-direction: row-reverse;
+  background-color: #394264;
+ 
+  height : 85vh;
+  width: 50vw;
+  box-shadow : -apx 4px 20 px -6px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  
+}
+.chatpage__body{
+  display :flex;
+}

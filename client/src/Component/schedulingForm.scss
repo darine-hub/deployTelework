@@ -1,0 +1,187 @@
+
+
+$outline: #DADDE8;
+$headings: #47536A;
+$header: #646E8A;
+$font: #A4A9C5;
+$bg: #394264;
+$hint: #15A4FA;
+
+.container-002
+   { max-width: 60rem;
+    margin: 0 auto}
+    
+.card-002
+   { border-radius: 5px;
+    margin:0 40px;
+    max-width: 40rem;
+    min-height: 300px;
+    background-color: #394264;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.22), 0 40px 77px 0 rgba(0, 0, 0, 0.22)}
+    
+.form__name-002
+  {  font-family: 'Oxygen';
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: 900;
+    background-color: #FCB150;
+    padding: 0px;
+    color: #fff;
+    font-size: 1.2rem}
+
+.time__container-002, .message__container-002, .contact__container-002
+    {padding: 20px 35px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    }
+// FORM TIME / CONTACT
+.form__time-002, .form__contact-002
+  {  color: $headings;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 10px}
+    .date-002, .time-002, .timezone-002, .cname-002, .cnum-002, .email-002
+       { display: inline-block;}
+        label
+           { margin-bottom: 0px;
+        height:20px}
+        label, input
+            {display: block;
+            width: 200px}
+    .time-002, .cnum-002
+       { margin-left: 20px}
+    .timezone-002, .email-002
+       { margin-top: 10px;
+        display: block}
+        input
+            {width: 200px}
+
+// UTILITIES
+.section-002
+    {color: $headings;
+    margin-bottom:20px;}
+    .box-002
+       { vertical-align: middle;
+        cursor: default;
+        user-select: none;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 900;
+        height: 20px;
+        width: 20px;
+       
+        line-height: 20px;
+        border-radius: 50px;
+        border: 1px solid $headings;
+        background-color: $headings;
+        text-align: center;
+        color: #fff}
+    span
+        {vertical-align: middle;
+        margin-left: 10px}
+// GLOBALS
+textarea
+   {box-sizing: border-box;
+    font-weight: normal;
+    padding: 5px;
+    margin-top: 20px;
+    border: 1px solid $font;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    color: $hint;
+    &:focus
+       { border-color: $hint}
+    &::placeholder
+        {font-weight: 300;
+        color: #A9A9A9}}
+    
+select
+    {cursor: pointer;
+    appearance: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: transparent;
+    border: 1px solid $font;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px;
+    transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: transparent;
+    border: 1px solid $font;
+    border-radius: 3px;
+    outline: none;
+    padding: 10px;
+    transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    color:#8d92ac;
+    background-color: #394264;
+    &:active
+      {  border-color: $hint}}
+
+input
+    {font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: transparent;
+    border: 1px solid $font;
+    border-radius: 3px;
+    outline: none;
+    padding: 10px;
+    background-color: #394264;
+    transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    color:#A4A9C5;
+    &:-webkit-autofill 
+        {-webkit-box-shadow: 0 0 0px 1000px white inset;
+        -webkit-text-fill-color: $hint}
+    &:focus
+        {border-color: $hint}
+    &::placeholder
+        {font-weight: 500;
+        color: #A9A9A9
+}}
+input[type=date]
+    {text-transform: uppercase
+    }
+// BUTTON
+
+  
+.form__confirmation-002
+    {padding: 10px 55px}
+
+    .span002{vertical-align: middle;
+        margin-left: 10px;
+    color:rgb(252, 249, 249)}
+    #dot {
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        background-color: #e82c29;
+      }
+      
+      #dot-pulse {
+        border-radius: 50%;
+        background-color: #e82c29;
+        animation: pulse 5s infinite;
+      }
+      
+      #id01 {
+        display: flex;
+        padding-right:-500px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        z-index: 9;
+      
+        transition: all 0.5s;
+      }
+      

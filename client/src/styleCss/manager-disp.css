@@ -1,0 +1,16 @@
+.employee{
+    
+    width: 250px;
+    height: 335px;
+    padding:2px;
+    margin: 3px;
+}
+.menu{
+    width: 500px;
+  
+    z-index: 1;
+}
+ .container-menu{
+    display: flex;
+    width: 100%;
+}

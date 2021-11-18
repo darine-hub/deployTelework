@@ -1,0 +1,127 @@
+
+
+  .panel01 {
+    overflow: hidden;
+    height: 500px;
+   
+  }
+  .panel01:hover{overflow-y: scroll;}
+
+    h4 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    .notification001 {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      padding-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      margin-right: 0;
+      background: #2c324e;
+      border-radius: 10px;
+      height: 150px;
+      width: 100%;
+
+      header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+
+        .message {
+          flex: 1 0 60%;
+        padding:0;
+          line-height: 20px;
+          font-size: 0.9rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          margin-top: 10px;
+        }
+        .message:hover{color:white}
+
+        i {
+          padding-left: 40px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .profile-001{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      
+     
+      
+      div {
+        display: flex;
+        align-items: center;
+        
+
+        .profile-pic {
+          max-width: 100%;
+          height: auto;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 1rem;
+          border-radius: 50%;
+          border: 1px solid #4a9bff;
+        }
+
+        p {
+          font-size: 0.8rem;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          color: #8793BC;
+          margin-left: 3px;
+          margin-right: 20px;
+        }
+      }
+      
+     
+    }
+
+    
+  
+
+.span-01 {
+    color: #f5f6fc;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    margin:0;
+  }
+  .buttons{display: flex;
+justify-content: center;}
+button {
+    max-width: 140px;
+    height: 45px;
+    margin-top: auto;
+    margin-left: 3px;
+    padding: 0.3rem 0.9rem;
+    align-self: center;
+    color: white;
+    outline: none;
+    border: none;
+    background: #4a9bff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .post{width: 70%;
+  background-color: #394264;
+border-radius: 5px;
+height:600px;
+float:right;
+padding:10px;}
+
+.post-content{
+
+  padding:10px;
+  margin:10px;
+  border: 5px;
+  color:white ;
+}

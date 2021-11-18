@@ -1,0 +1,182 @@
+
+  .salle-container {
+    margin: 0;
+    width: auto;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+  .salle-container > h1 {
+    margin: 0;
+    width: 25%;
+    height: 50px;
+  }
+  .row01 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100% !important;
+  }
+  .left-container {
+    width: 375px !important;
+  }
+  .menu {
+    width: 900px;
+  }
+  .main_section {
+    display: flex;
+    margin: 20px;
+  }
+  .main-salle {
+    display: flex;
+    flex-direction: column;
+    width:60%;
+    padding:30px;
+  }
+  .salle-container select {
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    margin-left: 15px;
+    padding: 5px 15px;
+    outline: none;
+  }
+  .salle {
+    background-color: #444451;
+    color: white;
+    height: 85px;
+    width: 85px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+   
+  }
+  .salle.selected {
+    background-color: #6feaf6;
+    color: #444451;
+  }
+  .salle.occupied {
+    background-color: rgb(231, 164, 86);
+    color: #444451;
+  }
+  .salle.na {
+    background-color: rgb(102, 100, 100);
+    color: #444451;
+  }
+  
+  .salle:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  .showcase .salle:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  .showcase {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: rgb(146, 145, 145);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0px;
+    margin-right: 10px;
+    width: 97%;
+  }
+ 
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  .showcase li small {
+    margin-left: 2px;
+  }
+  .row02 {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    padding: 10px;
+  }
+  .salles-res {
+    margin-left: 50px !important;
+  }
+  
+  p.text {
+    margin: 0px 15px 0px 15px;
+  }
+  p.text span {
+    color: #6feaf6;
+  }
+  
+  .red {
+    background-color: rgb(231, 164, 86);
+    color: #444451;
+  }
+  .darkblue {
+    background-color: #078b97;
+    color: #e8e8f1;
+  }
+  .blue {
+    background-color: #6feaf6;
+    color: #444451;
+  }
+  
+  .jobList {
+    display: grid;
+    grid-gap: 1rem;
+    width: 100%;
+    max-width: var(--jobList-maxWidth);
+    margin: 0 auto;
+  }
+  
+  .jobList .icon-divider {
+    font-size: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .jobList {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .reservation-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 500px;
+    overflow: hidden;
+    display:flex;
+  }
+  .reservation-wrapper:hover {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+  .res_wrapper {
+    display: flex;
+  }
+  
+  /* GLOBAL STYLING */
+  #dot-container {
+    margin: auto;
+    position: relative;
+    padding: 50px;
+  }
+  
+  #dot {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: #e82c29;
+  }
+  
+  #dot-pulse {
+    border-radius: 50%;
+    background-color: #e82c29;
+    animation: pulse 5s infinite;
+  }
+  
+  
