@@ -8,7 +8,7 @@ export const afficheTask = createAsyncThunk(
   async (info, { rejectWithValue }) => {
     try {
         
-      const res = await axios.get('project/tasks/listTasks',{
+      const res = await axios.get('/project/tasks/listTasks',{
         headers: { token: localStorage.getItem('token') }
       }) 
       
@@ -33,7 +33,7 @@ export const postNewTask = createAsyncThunk(
   async (info, { rejectWithValue,dispatch  }) => {
     try {
         
-      const res = await axios.post(`project/tasks/addtask`, info ,{
+      const res = await axios.post(`/project/tasks/addtask`, info ,{
         headers: { token: localStorage.getItem('token') }
       }) 
       dispatch(afficheTask());
@@ -52,7 +52,7 @@ export const updateTask = createAsyncThunk(
   'task/updateTask',
   async (info, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`project/tasks/updateTask/${info.id}`, info.data, {
+      const res = await axios.put(`/project/tasks/updateTask/${info.id}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(afficheTask());
@@ -68,7 +68,7 @@ export const getTask = createAsyncThunk(
     try {
       
         
-      const res = await axios.get(`project/tasks/tasksbyId/${ownerId}` ,{
+      const res = await axios.get(`/project/tasks/tasksbyId/${ownerId}` ,{
         headers: { token: localStorage.getItem('token') }
       }) 
       
@@ -87,7 +87,7 @@ export const updateStateTask = createAsyncThunk(
   'task/updateStateTask',
   async (id, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`project/tasks/updateStateTask/${id}`, {}, {
+      const res = await axios.put(`/project/tasks/updateStateTask/${id}`, {}, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(afficheTask());
@@ -105,7 +105,7 @@ export const updateFinishTask = createAsyncThunk(
   'task/updateFinishTask',
   async (id, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`project/tasks/updateFinishTask/${id}`, {}, {
+      const res = await axios.put(`/project/tasks/updateFinishTask/${id}`, {}, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(afficheTask());
@@ -125,7 +125,7 @@ export const deleteTask = createAsyncThunk(
   'task/deleteTask',
   async (id, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.delete(`project/tasks/deleteTask/${id}`, {
+      const res = await axios.delete(`/project/tasks/deleteTask/${id}`, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(afficheTask());
@@ -144,7 +144,7 @@ export const deleteManyTask = createAsyncThunk(
   'task/deleteManyTask',
   async (id, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.delete(`project/tasks/deleteManyTasks/${id}`, {
+      const res = await axios.delete(`/project/tasks/deleteManyTasks/${id}`, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(afficheTask());

@@ -6,7 +6,7 @@ export const postNewNotification = createAsyncThunk(
   async (info, { rejectWithValue }) => {
     try {
         
-      const res = await axios.post(`notification/addNotification`, info ,{
+      const res = await axios.post(`/notification/addNotification`, info ,{
         headers: { token: localStorage.getItem('token') }
       }) 
       console.log(info)
@@ -27,7 +27,7 @@ export const getNotification = createAsyncThunk(
     async (info, { rejectWithValue }) => {
       try {
           
-        const res = await axios.get('notification/listNotifications',{
+        const res = await axios.get('/notification/listNotifications',{
           headers: { token: localStorage.getItem('token') }
         }) 
         
@@ -50,7 +50,7 @@ export const getNotification = createAsyncThunk(
     async (id, { rejectWithValue, dispatch }) => {
       console.log(id)
       try {
-        const res = await axios.put(`notification/updateNotification/${id}`, {}, {
+        const res = await axios.put(`/notification/updateNotification/${id}`, {}, {
           headers: { token: localStorage.getItem('token') },
         });
         dispatch(getNotification ());

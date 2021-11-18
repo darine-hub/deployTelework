@@ -6,7 +6,7 @@ export const postNewProject = createAsyncThunk(
   async (info, { rejectWithValue }) => {
     try {
       const res = await axios.post(
-        "projects/addproject",
+        "/projects/addproject",
         info,
         {
           headers: { token: localStorage.getItem("token") },
@@ -29,7 +29,7 @@ export const afficheProject = createAsyncThunk(
   async (info, { rejectWithValue }) => {
     try {
       const res = await axios.get(
-        "projects/listProjects",
+        "/projects/listProjects",
         {
           headers: { token: localStorage.getItem("token") },
         }
@@ -51,7 +51,7 @@ export const updateProject = createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
     try {
       const res = await axios.put(
-        `projects/updateProject/${info.id}`,
+        `/projects/updateProject/${info.id}`,
         info.data,
         {
           headers: { token: localStorage.getItem("token") },
@@ -70,7 +70,7 @@ export const updateStateProject = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await axios.put(
-        `projects/updateStateProject/${id}`,
+        `/projects/updateStateProject/${id}`,
         {},
         {
           headers: { token: localStorage.getItem("token") },
@@ -92,7 +92,7 @@ export const updateProgreeProject = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await axios.put(
-        `projects/updateProgressProject/${id}`,
+        `/projects/updateProgressProject/${id}`,
         {},
         {
           headers: { token: localStorage.getItem("token") },
@@ -116,7 +116,7 @@ export const finishProject = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await axios.put(
-        `projects/finishProject/${id}`,
+        `/projects/finishProject/${id}`,
         {},
         {
           headers: { token: localStorage.getItem("token") },
@@ -136,7 +136,7 @@ export const deleteProject = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await axios.delete(
-        `projects/deleteProject/${id}`,
+        `/projects/deleteProject/${id}`,
         {
           headers: { token: localStorage.getItem("token") },
         }
@@ -155,7 +155,7 @@ export const getprojectbyid = createAsyncThunk(
   async (info, { rejectWithValue }) => {
     try {
       const res = await axios.get(
-        `projects/listProjectsbyid/${info}`,
+        `/projects/listProjectsbyid/${info}`,
         {
           headers: { token: localStorage.getItem("token") },
         }

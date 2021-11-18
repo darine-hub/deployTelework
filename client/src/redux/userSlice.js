@@ -11,7 +11,7 @@ console.log(formData)
 console.log(Array.from(formData))  */
 try {
 
- const res = await axios.post('users/register',info);
+ const res = await axios.post('/users/register',info);
     return res.data
     
 } catch (error) {
@@ -31,7 +31,7 @@ export const updateUserImage = createAsyncThunk('user/updateUserImage', async (i
     formData.append('userImg', info.file) 
       
       console.log(formData)
-      const res = await axios.put(`users/updateImage/${info.id}`, formData, {
+      const res = await axios.put(`/users/updateImage/${info.id}`, formData, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getUsers());
@@ -51,7 +51,7 @@ export const updateUser = createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
     console.log(info.data)
     try {
-      const res = await axios.put(`users/updateUser/${info.id}`, info.data, {
+      const res = await axios.put(`/users/updateUser/${info.id}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getUsers());
@@ -69,7 +69,7 @@ export const login = createAsyncThunk('user/login',async(data,{rejectWithValue})
 
 
     try {
-       const res= await axios.post('users/login',data) ;
+       const res= await axios.post('/users/login',data) ;
        return res.data;
     } catch (error) {
         return rejectWithValue(
@@ -89,7 +89,7 @@ export const forgetPassword = createAsyncThunk('user/forgetPassword',async(data,
 
 
   try {
-     const res= await axios.post('users/forgotPassword',data) ;
+     const res= await axios.post('/users/forgotPassword',data) ;
      return res.data;
   } catch (error) {
       return rejectWithValue(
@@ -113,7 +113,7 @@ export const verifPassword = createAsyncThunk('user/verifPassword',async(info,{r
 
 
   try {
-     const res= await axios.post(`users/verifPassword/${info.id}`, info.data,{
+     const res= await axios.post(`/users/verifPassword/${info.id}`, info.data,{
       headers: { token: localStorage.getItem('token') },
     });
      return res.data;
@@ -136,7 +136,7 @@ export const getUsers = createAsyncThunk('user/getUsers',async(info,{rejectWithV
 
     try {
 
-        const res= await axios.get('users/listUsers',{
+        const res= await axios.get('/users/listUsers',{
             headers: { token: localStorage.getItem('token') }
           }) ;
         return res.data
@@ -155,7 +155,7 @@ export const deleteUser = createAsyncThunk(
     'user/deleteUser',
     async (id, { rejectWithValue, dispatch }) => {
       try {
-        const res = await axios.delete(`users/deleteUser/${id}`, {
+        const res = await axios.delete(`/users/deleteUser/${id}`, {
           headers: { token: localStorage.getItem('token') },
         });
         dispatch(getUsers());
@@ -173,7 +173,7 @@ export const deleteUser = createAsyncThunk(
     'user/updateStateUser',
     async (id, { rejectWithValue, dispatch }) => {
       try {
-        const res = await axios.put(`users/updateStateUser/${id}`, {}, {
+        const res = await axios.put(`/users/updateStateUser/${id}`, {}, {
           headers: { token: localStorage.getItem('token') },
         });
         dispatch(getUsers());
@@ -189,7 +189,7 @@ export const deleteUser = createAsyncThunk(
   export const changePassword = createAsyncThunk('user/changePassword', async (info, { rejectWithValue, dispatch }) => {
 console.log(info)
     try {
-        const res = await axios.put(`users/changePassword/${info.id}`, info.data, {
+        const res = await axios.put(`/users/changePassword/${info.id}`, info.data, {
             headers: { token: localStorage.getItem('token') },
         });
         return res.data;
@@ -207,7 +207,7 @@ console.log(info)
 export const changeForgetPassword = createAsyncThunk('user/changeForgetPassword', async (info, { rejectWithValue, dispatch }) => {
   console.log(info)
       try {
-          const res = await axios.put(`users/changeForgetPassword/${info.id}`, info.data);
+          const res = await axios.put(`/users/changeForgetPassword/${info.id}`, info.data);
          
           return res.data;
           console.log(res.data)

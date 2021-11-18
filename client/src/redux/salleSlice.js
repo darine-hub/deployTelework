@@ -6,7 +6,7 @@ export const getsalles = createAsyncThunk(
   'salles/getsalles',
   async (info, { rejectWithValue }) => {
     try {
-      const res = await axios.get('reservation/getsalles',{
+      const res = await axios.get('/reservation/getsalles',{
         headers: { token: localStorage.getItem('token') }});
       return res.data;
     } catch (error) {
@@ -18,7 +18,7 @@ export const updateSalle = createAsyncThunk(
   'salle/updateSalle',
   async (info, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`reservation/updateSalle/${info.id}`, info.data, {
+      const res = await axios.put(`/reservation/updateSalle/${info.id}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getsalles())
@@ -31,7 +31,7 @@ export const updateSalle = createAsyncThunk(
 export const deleteSalle = createAsyncThunk(
   "salle/deleteSalle", async (info, {rejectWithValue,dispatch}) => {
      try {
-        const response = await axios.delete(`reservation/deleteSalle/${info}`,{
+        const response = await axios.delete(`/reservation/deleteSalle/${info}`,{
           headers: { token: localStorage.getItem('token') }});
           dispatch(getsalles())
         return await response.data;
@@ -43,7 +43,7 @@ export const getsallesbydept = createAsyncThunk(
   'salles/getsallesbydept',
   async (info, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`reservation/getsallesbydept/${info}`,{
+      const res = await axios.get(`/reservation/getsallesbydept/${info}`,{
         headers: { token: localStorage.getItem('token') }});
       return res.data;
     } catch (error) {
@@ -57,7 +57,7 @@ export const addSalle = createAsyncThunk(
   async (info, { rejectWithValue , dispatch }) => {
     try {
         
-      const res = await axios.post('reservation/addSalle', info ,{
+      const res = await axios.post('/reservation/addSalle', info ,{
         headers: { token: localStorage.getItem('token') }
       }) 
     

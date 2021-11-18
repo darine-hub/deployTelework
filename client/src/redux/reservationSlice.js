@@ -6,7 +6,7 @@ export const addNewreservation = createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
    
     try {
-      const res = await axios.post('reservation/addreservations', info, {
+      const res = await axios.post('/reservation/addreservations', info, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getreservationsbyId(info.userId))
@@ -24,7 +24,7 @@ export const addNewreservation = createAsyncThunk(
 export const getreservations = createAsyncThunk(
   "reservations/getreservations", async (_, thunkAPI) => {
      try {
-        const response = await axios.get('reservation/getreservations',{
+        const response = await axios.get('/reservation/getreservations',{
           headers: { token: localStorage.getItem('token') }});//where you want to fetch data
         return await response.data;
       } catch (error) {
@@ -34,7 +34,7 @@ export const getreservations = createAsyncThunk(
 export const getreservationsbyId = createAsyncThunk(
   "reservationbyId/getreservationsbyId", async (info, thunkAPI) => {
      try {
-        const response = await axios.get(`reservation/getreservationsbyId/${info}`,{
+        const response = await axios.get(`/reservation/getreservationsbyId/${info}`,{
           headers: { token: localStorage.getItem('token') }});//where you want to fetch data
         return await response.data;
       } catch (error) {
@@ -45,7 +45,7 @@ export const updateReservation = createAsyncThunk(
   'reservation/updateReservation',
   async (info, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`reservation/updateReservation/${info.id}`, info.data, {
+      const res = await axios.put(`/reservation/updateReservation/${info.id}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getreservationsbyId(info.userId));
@@ -59,7 +59,7 @@ export const updateReservation = createAsyncThunk(
 export const deleteReservation = createAsyncThunk(
   "reservation/deleteReservation", async (info, {rejectWithValue,dispatch}) => {
      try {
-        const response = await axios.delete(`reservation/deleteReservation/${info.id}`,{
+        const response = await axios.delete(`/reservation/deleteReservation/${info.id}`,{
           headers: { token: localStorage.getItem('token') }});
           dispatch(getreservationsbyId(info.user))
           dispatch(getreservations())

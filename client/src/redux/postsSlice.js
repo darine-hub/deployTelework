@@ -6,7 +6,7 @@ export const addNewPost = createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
     
     try {
-      const res =  axios.post('api/blog/createPost', info,
+      const res =  axios.post('/api/blog/createPost', info,
       
       {  headers: { token: localStorage.getItem('token') }
       });
@@ -58,7 +58,7 @@ export const getBlog = createAsyncThunk(
     try {
       
         
-      const res = await axios.get(`api/blog/getBlogs` ,{
+      const res = await axios.get(`/api/blog/getBlogs` ,{
         headers: { token: localStorage.getItem('token') }
       }) 
       
@@ -76,7 +76,7 @@ export const getSinglePost = createAsyncThunk(
   'posts/getSinglePost',
   async (variable, { rejectWithValue }) => {
     try {
-      const res = axios.get(`api/blog/getPost/${variable}`,{
+      const res = axios.get(`/api/blog/getPost/${variable}`,{
         headers: { token: localStorage.getItem('token') }})
       return res.data;
     } catch (error) {

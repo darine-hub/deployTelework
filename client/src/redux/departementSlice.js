@@ -9,7 +9,7 @@ export const getDepartement = createAsyncThunk(
     async (info, { rejectWithValue }) => {
       try {
           
-        const res = await axios.get('departements/listDepartement',{
+        const res = await axios.get('/departements/listDepartement',{
           headers: { token: localStorage.getItem('token') }
         }) 
         
@@ -32,7 +32,7 @@ export const getDepartement = createAsyncThunk(
     async (info, { rejectWithValue ,dispatch}) => {
       try {
           
-        const res = await axios.post(`departements/addDepartement`, info ,{
+        const res = await axios.post(`/departements/addDepartement`, info ,{
           headers: { token: localStorage.getItem('token') }
         }) 
         dispatch(getDepartement ());
@@ -52,7 +52,7 @@ export const getDepartement = createAsyncThunk(
     async (info, { rejectWithValue, dispatch }) => {
      
       try {
-        const res = await axios.put(`departements/updateDepartement/${info.id}`, info.data, {
+        const res = await axios.put(`/departements/updateDepartement/${info.id}`, info.data, {
           headers: { token: localStorage.getItem('token') },
         });
         dispatch(getDepartement ());
@@ -71,7 +71,7 @@ export const getDepartement = createAsyncThunk(
     'departement/deleteDepartement',
     async (id, { rejectWithValue, dispatch }) => {
       try {
-        const res = await axios.delete(`departements/deleteDepartement/${id}`, {
+        const res = await axios.delete(`/departements/deleteDepartement/${id}`, {
           headers: { token: localStorage.getItem('token') },
         });
         dispatch(getDepartement ());

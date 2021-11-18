@@ -5,7 +5,7 @@ export const updateMessages = createAsyncThunk(
   'message/updateMessage',
   async (info, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`chat/updateStatueMessage/${info.user1}/${info.user2}`, info.data, {
+      const res = await axios.put(`/chat/updateStatueMessage/${info.user1}/${info.user2}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
      
@@ -21,7 +21,7 @@ export const updateChatmessage = createAsyncThunk(
   'message/updateChatmessage',
   async (info, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`chat/updateStatueChatroom/${info.id}`, info.data, {
+      const res = await axios.put(`/chat/updateStatueChatroom/${info.id}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getallchatmessages(info.chatId))
@@ -36,7 +36,7 @@ export const updateMembers = createAsyncThunk(
   'message/updateMembers',
   async (info, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`chat/updateMembers/${info.id}`, info.data, {
+      const res = await axios.put(`/chat/updateMembers/${info.id}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getAllChatrooms(info.userId))
@@ -51,7 +51,7 @@ export const updateChatName = createAsyncThunk(
   'message/updateChatName',
   async (info, { rejectWithValue, dispatch }) => {
     try {
-      const res = await axios.put(`chat/updateRoomName/${info.id}`, info.data, {
+      const res = await axios.put(`/chat/updateRoomName/${info.id}`, info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       dispatch(getAllChatrooms(info.userId))
@@ -68,7 +68,7 @@ export const deleteChat = createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
     try {
       const res = await axios.delete(
-        `chat/deleteChatroom/${info.data}`,
+        `/chat/deleteChatroom/${info.data}`,
         {
           headers: { token: localStorage.getItem("token") },
         }
@@ -86,7 +86,7 @@ export const addMessage= createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
     console.log('info here',info);
     try {
-      const res = await axios.post('chat/addmessage', info.data, {
+      const res = await axios.post('/chat/addmessage', info.data, {
         headers: { token: localStorage.getItem('token') },
       });
       console.log(info)
@@ -108,7 +108,7 @@ export const addchatMessage= createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
     console.log('info here',info);
     try {
-      const res = await axios.post('chat/addchatmessage', info, {
+      const res = await axios.post('/chat/addchatmessage', info, {
         headers: { token: localStorage.getItem('token') },
       });
      dispatch(getchatmessages(info.Room))
@@ -128,7 +128,7 @@ export const addChatroom= createAsyncThunk(
   async (info, { rejectWithValue, dispatch }) => {
     console.log('info here',info);
     try {
-      const res = await axios.post('chat/addRoom', info, {
+      const res = await axios.post('/chat/addRoom', info, {
         headers: { token: localStorage.getItem('token') },
       });
       const id=JSON.parse(localStorage.getItem('user'))
@@ -149,7 +149,7 @@ export const addChatroom= createAsyncThunk(
 export const getAllChatrooms = createAsyncThunk(
   "chatRooms/getAllChatroom", async (userId, thunkAPI) => {
      try {
-        const response = await axios.get(`chat/getAllChatrooms/${userId}`,{
+        const response = await axios.get(`/chat/getAllChatrooms/${userId}`,{
           headers: { token: localStorage.getItem('token')
          }});//where you want to fetch data
         return await response.data;
@@ -162,7 +162,7 @@ export const getmessages = createAsyncThunk(
   "messages/getmessages", async (Info, thunkAPI) => {
      try {
        console.log(Info)
-        const response = await axios.get(`chat/getmessages/${Info.user1}/${Info.user2}`,{
+        const response = await axios.get(`/chat/getmessages/${Info.user1}/${Info.user2}`,{
         
         headers: { token: localStorage.getItem('token')
          }});//where you want to fetch data
@@ -177,7 +177,7 @@ export const getallmessages = createAsyncThunk(
   "allmessages/getallmessages", async (Info, thunkAPI) => {
      try {
        console.log(Info)
-        const response = await axios.get(`chat/getallmessages/${Info}`,{
+        const response = await axios.get(`/chat/getallmessages/${Info}`,{
         
         headers: { token: localStorage.getItem('token')
          }});//where you want to fetch data
@@ -191,7 +191,7 @@ export const getallmessages = createAsyncThunk(
 export const getchatmessages = createAsyncThunk(
   "Chatmessages/getchatmessages", async (Info, thunkAPI) => {
      try {
-        const response = await axios.get(`chat/getRoomChat/${Info}`,{
+        const response = await axios.get(`/chat/getRoomChat/${Info}`,{
         
         headers: { token: localStorage.getItem('token')
          }});//where you want to fetch data
@@ -204,7 +204,7 @@ export const getchatmessages = createAsyncThunk(
 export const getallchatmessages = createAsyncThunk(
   "Allchatmessages/getallchatmessages", async (Info, thunkAPI) => {
      try {
-        const response = await axios.get(`chat/getallRoomChat/${Info}`,{
+        const response = await axios.get(`/chat/getallRoomChat/${Info}`,{
         
         headers: { token: localStorage.getItem('token')
          }});//where you want to fetch data
