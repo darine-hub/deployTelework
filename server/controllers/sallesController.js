@@ -1,4 +1,4 @@
-const Salle = require('../Models/salleSchema')
+const Salle = require('../models/salleSchema')
 const getsalles= async (req,res)=>{
     try{
         const salle = await Salle.find({}).populate('departement')
