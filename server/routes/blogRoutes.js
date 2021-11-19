@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { Blog } = require("../models/announceSchema");
 
-const { auth } = require("../middleware/authmiddleware");
+const authMiddleware = require ('../middleware/authMiddleware')
+
 const multer = require("multer");
 
 // STORAGE MULTER CONFIG
