@@ -12,7 +12,7 @@ const pusher = new Pusher({
     useTLS: true,
   });
 
-  var distDir = __dirname + "/dist/";
+  var distDir = __dirname + "/client/";
   app.use(express.static(distDir));
 
 app.use(express.json())
