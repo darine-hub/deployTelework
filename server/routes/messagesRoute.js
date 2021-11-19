@@ -15,7 +15,7 @@ const {
   updateStatueChatroom,
   updateStatueMessage,
   getallRoomChat
-} = require("../Controllers/chatController");
+} = require("../controllers/chatController");
 
 router.get("/getAllChatrooms/:id", authMiddleware, getAllChatrooms);
 router.post("/addRoom", authMiddleware, addRoom);
