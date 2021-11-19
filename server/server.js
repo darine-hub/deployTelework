@@ -12,6 +12,9 @@ const pusher = new Pusher({
     useTLS: true,
   });
 
+  var distDir = __dirname + "/dist/";
+  app.use(express.static(distDir));
+
 app.use(express.json())
 //setup cors
 const cors = require ('cors');
