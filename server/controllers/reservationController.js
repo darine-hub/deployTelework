@@ -15,7 +15,7 @@ const getreservations= async (req,res)=>{
     }
     
 
-}
+};
 const addreservations= async (req,res)=>{
     try{
         console.log('hi')
@@ -41,7 +41,7 @@ console.error(error)
     }
     
 
-}
+};
 const getreservationsbyId= async (req,res)=>{
     try{
         const reservationbyId = await Reservation.find({userId:req.params.id}).populate('salleId')
@@ -57,7 +57,7 @@ const getreservationsbyId= async (req,res)=>{
     }
     
 
-}
+};
 const deleteReservation = async (req,res)=>{
     try {
        const reservationDeleted =await Reservation.findByIdAndDelete(req.params.id);
@@ -67,7 +67,7 @@ const deleteReservation = async (req,res)=>{
         res.status(500).json({message:error}) 
     }
     
-    }
+    };
     const updateReservation = async (req, res) => {
         try {
           const { salleId, dateOfreservation ,shift} = req.body;
@@ -96,5 +96,5 @@ const deleteReservation = async (req,res)=>{
         }
         
     
-    }
-module.exports={getreservations,addreservations,getreservationsbySalle,getreservationsbyId,deleteReservation,updateReservation}
+    };
+module.exports={getreservations,addreservations,getreservationsbySalle,getreservationsbyId,deleteReservation,updateReservation};
