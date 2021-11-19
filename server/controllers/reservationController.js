@@ -1,5 +1,5 @@
 
-const Reservation = require('../Models/reservationSchema')
+const Reservation = require('../models/reservationSchema')
 const getreservations= async (req,res)=>{
     try{
         const reservation = await Reservation.find()
