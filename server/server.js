@@ -11,8 +11,11 @@ const pusher = new Pusher({
     cluster: "eu",
     useTLS: true,
   });
-
-app.use(express.static('client'));
+//setup for deploy
+app.use(express.static(path.join(__dirname,'../','client','build')))
+app.get('*',(req,res)=>{
+  res.sendFile(path.join(__dirname,'../','client','build','index.html'))
+})
 
 app.use(express.json())
 //setup cors
