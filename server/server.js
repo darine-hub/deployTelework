@@ -19,6 +19,9 @@ app.get('*',(req,res)=>{
 })
 
 app.use(express.json())
+
+
+
 //setup cors
 const cors = require ('cors');
 app.use(cors());
