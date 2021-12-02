@@ -23,12 +23,12 @@ const HomePage = ({ history }) => {
   const project = useSelector((state) => state.project);
   const user = useSelector((state) => state.user);
   const task = useSelector((state) => state.task);
-  useEffect(() => {
+ /*  useEffect(() => {
     if (!user.isAuth) {
       history.push('/login');
     } 
     
-  }, [user.isAuth,history]);
+  }, [user.isAuth,history]); */
   useEffect(() => {
     dispatch(getUsers());
 
@@ -53,12 +53,12 @@ const HomePage = ({ history }) => {
   return (
     <body>
       <div class="main-container">
-     { user.isAuth? <div >
+     { user.isAuth && <div >
         <BarreNavigationHome />
 
         <div class="middle-container container">
           <div class="profile block">
-            {user.isAuth ?
+            {user.isAuth &&
               user.users.filter((elId) => elId._id === user.userInfo._id)
                 .map((elm) => (
                   <div>
@@ -130,12 +130,12 @@ const HomePage = ({ history }) => {
                       
                     </ul>
                   </div>
-                )):<></>}
+                ))}
           </div>
 
           <div class="weather block clear">
             {
-           user.isAuth?
+           user.isAuth &&
               user.users.filter(elId => elId._id === user.userInfo._id).map((elm) => {
                   return elm.role === "Admin" ? (
                     <Link to={"/listUsers"}>
@@ -152,8 +152,8 @@ const HomePage = ({ history }) => {
                       </a>
                     </Link>
                   );
-                }):<></>}
-            {user.isAuth ?
+                })}
+            {user.isAuth &&
               user.users
                 .filter((elId) => elId._id === user.userInfo._id)
                 .map((elm) => {
@@ -164,7 +164,7 @@ const HomePage = ({ history }) => {
                   ) : (
                     <Link to={"/listProject"}>  <ProjetHomeEmployee /></Link>
                   );
-                }):<></>}
+                })}
           </div> 
 
           {/*     <div class="tweets block">
@@ -263,7 +263,7 @@ const HomePage = ({ history }) => {
                
         </div>  */}
         </div>
-      </div>:null}
+      </div>}
       </div>
     </body>
   );
