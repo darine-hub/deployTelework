@@ -68,7 +68,7 @@ const Calendar = () => {
             
           </tr>
         </thead>
-        <tbody>
+        {/* <tbody>
 
           {Object.values(calendarRows).map((cols) => {
             return (
@@ -90,8 +90,7 @@ const Calendar = () => {
                       onClick={() => dateClickHandler(col.date)}
                       
                     >
-                      {reservation.reservationbyId.filter(
-    (elm) =>(
+                      {reservation.reservationbyId.length>0 ?reservation.reservationbyId.filter(elm =>(
       dateFnsFormat(new Date(elm.dateOfreservation), FORMAT) ===
         dateFnsFormat(new Date(col.date.split('-')[2],Number(col.date.split('-')[1])-1,col.date.split('-')[0]), FORMAT)
   )).length?<div id="dot-container-home">
@@ -99,7 +98,7 @@ const Calendar = () => {
     <div id="dot-pulse-home"></div>
   </div>
 </div>
- : null}
+ : null:console.log('no reservations')}
                       {col.value}
                     </td>
                   )
@@ -107,7 +106,7 @@ const Calendar = () => {
               </tr>
             );
           })}
-        </tbody>
+        </tbody> */}
       </table>
 
       

@@ -58,9 +58,8 @@ const HomePage = ({ history }) => {
 
         <div class="middle-container container">
           <div class="profile block">
-            {user.users &&
-              user.users
-                .filter((elId) => elId._id === user.userInfo._id)
+            {user.users.length >0 ?
+              user.users.filter((elId) => elId._id === user.userInfo._id)
                 .map((elm) => (
                   <div>
                     <a class="add-button" href={`/profile`}>
@@ -131,14 +130,13 @@ const HomePage = ({ history }) => {
                       
                     </ul>
                   </div>
-                ))}
+                )):<></>}
           </div>
 
           <div class="weather block clear">
-            {user.users &&
-              user.users
-                .filter((elId) => elId._id === user.userInfo._id)
-                .map((elm) => {
+            {
+           user.users ?
+              user.users.filter(elId => elId._id === user.userInfo._id).map((elm) => {
                   return elm.role === "Admin" ? (
                     <Link to={"/listUsers"}>
                       {" "}
@@ -154,8 +152,8 @@ const HomePage = ({ history }) => {
                       </a>
                     </Link>
                   );
-                })}
-            {user.users &&
+                }):<></>}
+            {user.users ?
               user.users
                 .filter((elId) => elId._id === user.userInfo._id)
                 .map((elm) => {
@@ -166,7 +164,7 @@ const HomePage = ({ history }) => {
                   ) : (
                     <Link to={"/listProject"}>  <ProjetHomeEmployee /></Link>
                   );
-                })}
+                }):<></>}
           </div> 
 
           {/*     <div class="tweets block">
