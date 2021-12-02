@@ -53,12 +53,12 @@ const HomePage = ({ history }) => {
   return (
     <body>
       <div class="main-container">
-     { user.userInfo?<div >
+     { user.isAuth? <div >
         <BarreNavigationHome />
 
         <div class="middle-container container">
           <div class="profile block">
-            {user.users.length >0 ?
+            {user.isAuth ?
               user.users.filter((elId) => elId._id === user.userInfo._id)
                 .map((elm) => (
                   <div>
@@ -135,7 +135,7 @@ const HomePage = ({ history }) => {
 
           <div class="weather block clear">
             {
-           user.users ?
+           user.isAuth?
               user.users.filter(elId => elId._id === user.userInfo._id).map((elm) => {
                   return elm.role === "Admin" ? (
                     <Link to={"/listUsers"}>
@@ -153,7 +153,7 @@ const HomePage = ({ history }) => {
                     </Link>
                   );
                 }):<></>}
-            {user.users ?
+            {user.isAuth ?
               user.users
                 .filter((elId) => elId._id === user.userInfo._id)
                 .map((elm) => {
