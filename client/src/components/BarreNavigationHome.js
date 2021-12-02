@@ -101,7 +101,7 @@ const BarreNavigationHome = ({notif}) => {
     
 
          
- {user.users &&
+ {user.isAuth &&
                 user.users.filter(elId => elId._id === user.userInfo._id).map((elm)=>{
                     
              return elm.role === 'Admin' ? 
@@ -277,7 +277,7 @@ const BarreNavigationHome = ({notif}) => {
 
   
     <div class="left-container container">
-    {user.users &&
+    {user.isAuth && 
                 user.users.filter(elId => elId._id === user.userInfo._id).map((elm)=>{
                     
              return elm.role === 'Admin' ? 
