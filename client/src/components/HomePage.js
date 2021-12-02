@@ -59,7 +59,7 @@ const HomePage = ({ history }) => {
         <div class="middle-container container">
           <div class="profile block">
             {user.isAuth &&
-              user.users.filter((elId) => elId._id === user.userInfo._id)
+              user.users/* .filter((elId) => elId._id === user.userInfo._id) */
                 .map((elm) => (
                   <div>
                     <a class="add-button" href={`/profile`}>
